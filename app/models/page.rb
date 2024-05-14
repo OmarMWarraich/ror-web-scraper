@@ -9,11 +9,11 @@ class Page < ApplicationRecord
     scraper = Scraper.new(url)
     result = case check_type
              when "text"
-               scarper.text(selector: selector).downcase == match_text.downcase
+               scraper.text(selector: selector).downcase == match_text.downcase
              when "exists"
-               scraper.present?
+               scraper.present?(selector: selector)
              when "not_exists"
-               !scraper.present?
+               !scraper.present?(selector: selector)
              end
     results.create(success: result)
   end
