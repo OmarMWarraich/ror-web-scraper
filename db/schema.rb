@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_13_171241) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_15_173532) do
   create_table "pages", force: :cascade do |t|
     t.string "url"
     t.string "check_type"
@@ -18,6 +18,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_13_171241) do
     t.string "match_text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.integer "last_result_id"
   end
 
   create_table "results", force: :cascade do |t|
