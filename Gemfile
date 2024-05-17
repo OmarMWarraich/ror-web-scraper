@@ -67,3 +67,6 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 2.6"
+group :development do
+  gem 'letter_opener_web', '~> 3.0'
+end

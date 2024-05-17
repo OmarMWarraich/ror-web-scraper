@@ -8,7 +8,14 @@ class Page < ApplicationRecord
   validates :selector, presence: true
   validates :match_text, presence: {if: -> { check_type == "text" }}
 
-  def run_check!
+  def check_and_notify
+    check
+    last_result.notify
+  end
+
+
+
+  def check
     scraper = Scraper.new(url)
     result = case check_type
              when "text"
